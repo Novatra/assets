@@ -5,6 +5,17 @@
     box-sizing: border-box;
 }
 
+#dark-mode-toggle{
+    position: relative; 
+    top: 10px; 
+    right: 10px; 
+    z-index: 1000; 
+    background: transparent; 
+    border: none; 
+    font-size: 16px; 
+    cursor: pointer;
+}
+
 body {
     font-family: "Inter",Arial, sans-serif;
     line-height: 1.6;
@@ -74,7 +85,6 @@ button:hover {
     margin-bottom: 15px;
     padding: 10px;
     border-radius: 8px;
-    background-color: #ECEFF1;
 }
 
 .question {
@@ -133,8 +143,6 @@ button:hover {
 #explanation {
     margin-top: 15px;
     padding: 10px;
-    
-    background-color: #ECEFF1;
 }
 
 .navigation-buttons {
@@ -149,14 +157,6 @@ button:hover {
 
 .btn-icon {
     margin: 0 5px;
-}
-
-.success {
-    color: #202020;
-}
-
-.error {
-    color: #202020;
 }
 
 footer {
@@ -474,3 +474,180 @@ img.banner {
 
 
 
+/* Dark Mode Color Palette */
+:root {
+    --dark-bg-primary: #121212;
+    --dark-bg-secondary: #1E1E1E;
+    --dark-bg-tertiary: #2C2C2C;
+    --dark-text-primary: #E0E0E0;
+    --dark-text-secondary: #B0B0B0;
+    --dark-border-color: #404040;
+    --dark-accent-primary: #BB86FC;
+    --dark-accent-secondary: #03DAC6;
+    --dark-error: #CF6679;
+    --dark-success: #4CAF50;
+}
+
+/* Base Dark Mode Styles */
+body.dark-mode {
+    background-color: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+}
+
+/* App Container */
+body.dark-mode .app-container {
+    background-color: var(--dark-bg-primary);
+}
+
+/* Buttons */
+body.dark-mode button {
+    background-color: var(--dark-bg-tertiary);
+    color: var(--dark-text-primary);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode button:hover {
+    background-color: var(--dark-border-color);
+    color: var(--dark-accent-secondary);
+}
+
+/* Breadcrumb */
+body.dark-mode .breadcrumb-item {
+    color: var(--dark-accent-primary);
+}
+
+body.dark-mode .breadcrumb-item:hover {
+    color: var(--dark-accent-secondary);
+    text-decoration: underline;
+}
+
+/* Selection Containers */
+body.dark-mode .selection-container,
+body.dark-mode .question-header,
+body.dark-mode #explanation {
+    color: var(--dark-text-primary);
+    border-color: var(--dark-border-color);
+}
+
+/* Options */
+body.dark-mode .option {
+    background-color: var(--dark-bg-tertiary);
+    color: var(--dark-text-primary);
+    border-color: var(--dark-border-color);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .option:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .option.selected {
+    background-color: var(--dark-accent-primary);
+    color: var(--dark-bg-primary);
+}
+
+body.dark-mode .option.correct {
+    background-color: var(--dark-success);
+    color: white;
+}
+
+body.dark-mode .option.incorrect {
+    background-color: var(--dark-error);
+    color: white;
+}
+
+/* Integer Input */
+body.dark-mode #integer-input {
+    background-color: var(--dark-bg-tertiary);
+    color: var(--dark-text-primary);
+    border-color: var(--dark-border-color);
+}
+
+/* Timer and Progress */
+body.dark-mode .timer {
+    color: var(--dark-accent-secondary);
+}
+
+body.dark-mode #timer {
+    color: var(--dark-accent-secondary);
+}
+
+body.dark-mode #current-question, 
+body.dark-mode #total-questions {
+    color: var(--dark-text-primary);
+}
+
+/* Navigation Buttons */
+body.dark-mode .nav-btn,
+body.dark-mode #check-answer {
+    background-color: var(--dark-bg-tertiary);
+    color: var(--dark-text-primary);
+    border-color: var(--dark-border-color);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .nav-btn:hover,
+body.dark-mode #check-answer:hover {
+    background-color: var(--dark-border-color);
+    color: var(--dark-accent-secondary);
+}
+
+/* Links */
+body.dark-mode a {
+    color: var(--dark-accent-secondary);
+    transition: color 0.3s ease;
+}
+
+body.dark-mode a:hover {
+    color: var(--dark-accent-primary);
+}
+
+/* Question List */
+body.dark-mode #question-list-container {
+    background-color: var(--dark-bg-secondary);
+    border-color: var(--dark-border-color);
+}
+
+body.dark-mode .question-list-item {
+    background-color: var(--dark-bg-tertiary);
+    color: var(--dark-text-primary);
+    border-color: var(--dark-border-color);
+}
+
+body.dark-mode .question-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .question-list-item.active {
+    background-color: var(--dark-accent-primary);
+    color: var(--dark-bg-primary);
+}
+
+/* Footer */
+body.dark-mode footer {
+    color: var(--dark-text-secondary);
+    border-top-color: var(--dark-border-color);
+}
+
+/* Scrollbar (for browsers that support it) */
+body.dark-mode ::-webkit-scrollbar {
+    width: 12px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: var(--dark-bg-secondary);
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background-color: var(--dark-border-color);
+    border-radius: 6px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--dark-accent-primary);
+}
+
+body.dark-mode h1, 
+body.dark-mode h2 {
+    color: var(--dark-text-primar);
+}
