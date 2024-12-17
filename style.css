@@ -163,7 +163,7 @@ footer {
     text-align: center;
     margin-top: 20px;
     padding-top: 10px;
-    border-top: 1px solid #eee;
+    
     color: #666;
 }
 
@@ -472,5 +472,214 @@ img.banner {
 }
 
 
+:root {
+    /* Color Categories */
+    
+    /* Base Colors */
+    --dark-bg-primary: #000d01;
+    --dark-bg-secondary: #000d01;
+    --dark-bg-tertiary: #000d01;
+    --dark-bg-accent: #000d01;
+    
+    /* Text Colors */
+    --dark-text-primary: #d4ffd7;
+    --dark-text-secondary: #F5F5F5;
+    --dark-text-accent: #FAFAFA;
+    
+    /* Interactive Colors */
+    --dark-interactive-primary: rgba(61, 255, 75, 0.5);
+    --dark-interactive-secondary: #6371ff;
+    --dark-interactive-hover: #08260a;
+    
+    /* State Colors */
+    --dark-state-success: #307a33;
+    --dark-state-success-text: #C8E6C9;
+    --dark-state-error: #D32F2F;
+    --dark-state-error-text: #FFCDD2;
+    
+    /* Border Colors */
+    --dark-border-primary: #424242;
+    --dark-border-secondary: #616161;
+    --dark-border-accent: #90A4AE;
+    
+    /* Link Colors */
+    --dark-link-color: #90CAF9;
+}
 
+@media (prefers-color-scheme: dark) {
+    body {
+        color: var(--dark-text-primary);
+        background-color: var(--dark-bg-primary);
+    }
+    
+    h1, h2 {
+        color: #e8faea; /* Keeping the original unique header color */
+    }
+    
+    header {
+        border-bottom: 1px solid var(--dark-border-primary);
+    }
+    
+    button {
+        color: var(--dark-text-primary);
+        background-color: var(--dark-bg-primary);
+        border: 2px solid var(--dark-interactive-primary) !important;
+    }
+    
+    button:hover {
+        background-color: var(--dark-interactive-hover);
+    }
+    
+    .back-btn, #back-to-subjects {
+        display: none !important;
+        color: var(--dark-text-accent) !important;
+        background-color: var(--dark-interactive-secondary) !important;
+        border-color: var(--dark-border-accent) !important;
+    }
+    
+    /* Question and Option Styles */
+    .question-list-container,
+    .question-list-item,
+    .question-header,
+    .question,
+    .options,
+    .option {
+        background-color: var(--dark-bg-tertiary);
+        color: var(--dark-text-secondary);
+    }
+    
+    .question-list-container,
+    .question-list-item {
+        border: 1px solid var(--dark-border-primary);
+    }
+    
+    .option {
+        border-color: var(--dark-border-primary);
+        background-color: #001702;
+    }
+    
+    .option.selected {
+        background-color: rgba(75, 250, 83, 0.4);
+        border-color: var(--dark-interactive-primary);
+    }
+    
+    .option.correct {
+        background-color: var(--dark-state-success);
+        color: var(--dark-state-success-text);
+        border-color: #2E7D32;
+    }
+    
+    .option.incorrect {
+        background-color: #330101;
+        color: #fc7b79 !important; 
+        border-color: #fa2723 !important;
+    }
+    
+    /* Input Styles */
+    #integer-input {
+        background-color: var(--dark-bg-accent);
+        border-color: var(--dark-border-primary);
+        color: var(--dark-text-accent);
+    }
+    
+    /* Explanation and Navigation */
+    
+    .question-actions,
+    .navigation-buttons {
+        background-color: var(--dark-bg-secondary);
+        color: var(--dark-text-secondary);
+    }
+    
+    /* Breadcrumb Styles */
+    .breadcrumb-item {
+        color: #EEEEEE;
+    }
+    
+    .breadcrumb-item:hover {
+        color: var(--dark-text-accent);
+    }
+    
+    .breadcrumb-item + .breadcrumb-item::before {
+        color: var(--dark-text-accent);
+    }
+    
+    /* Link Styles */
+    a {
+        color: var(--dark-link-color);
+    }
+    
+    /* Footer */
+    footer {
+        );
+        color: #EEEEEE;
+    }
+    .question-list-item.active {
+        font-weight: bolder;
+        color: var(--dark-bg-primary);
+        border: 2px dashed rgba(75, 250, 83, 0.8);
+        background-color: rgba(75, 250, 83, 0.6);
+    }
+    .question-list-item {
+        font-weight: bolder;
+        color: var(--dark-text-primary);
+        border: 1px dashed rgba(75, 250, 83, 0.8);
+    }
+    /* Hover States */
+    .question-list-item:hover {
+        color: var(--dark-bg-primary);
+        border: 2px dashed rgba(75, 250, 83, 0.8);
+        background-color: rgba(75, 250, 83, 0.5);
+        
+    }
+    
+    /* Math and Special Text */
+    .MathJax,
+    #explanation .MathJax,
+    .option .MathJax,
+    #explanation,
+    #timer,
+    #current-question,
+    #total-questions,
+    #paper-title,
+    {
+        color: white !important;
+    }
+    
+    /* Question and Options Background */
+    #question,
+    .question,
+    #options,
+    .options {
+        background-color: var(--dark-bg-secondary);
+        color: var(--dark-text-secondary);
+    }
+    
+    /* Additional Buttons */
+    #check-answer,
+    .nav-btn {
+        color: var(--dark-text-primary);
+        background-color: rgba(75, 250, 83, 0.2);
+        border: 2px solid var(--dark-interactive-primary) !important;
+    }
+    #question-list-container {
+        background-color: var(--dark-bg-primary) !important;
+        color: var(--dark-text-primary) !important;
+    }
+    #explanation, .success, .error{
+        color: white !important;
+        background: var(--dark-bg-primary) !important;
+    }
+    img:not(#banner) {
+    filter: invert(100%) contrast(1000%) brightness(150%) saturate(1000%);     /* Intense color saturation */
+    opacity: 1;
 
+    }
+    #timer, #total-questions, #paper-title, #current-question {
+        color: var(--dark-text-primary) !important;
+    }
+    a:not(#banner) {
+        color: #4dff58; 
+        border-bottom: 1px dotted #4dff58;
+        text-decoration: none;
+    }
+}
