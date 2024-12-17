@@ -670,7 +670,7 @@ img.banner {
         background: var(--dark-bg-primary) !important;
     }
     img:not(#banner) {
-    filter: invert(100%) contrast(1000%) brightness(150%) saturate(1000%);     /* Intense color saturation */
+    filter: invert(100%) contrast(1000%) brightness(150%);     /* Intense color saturation */
     opacity: 1;
 
     }
