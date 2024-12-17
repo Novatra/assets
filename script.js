@@ -96,7 +96,7 @@ function initQuestionProgress() {
 
 function updateQuestionListUI() {
     const questionList = $(`
-        <div id="question-list-container" style="position: sticky; top: 0; padding: 10px; background-color: #f0f0f0; z-index: 1; display: flex; overflow-x: auto; white-space: nowrap;">
+        <div id="question-list-container" style="position: sticky; top: 0; padding: 10px; z-index: 1; display: flex; overflow-x: auto; white-space: nowrap;">
             ${questionProgress.map(q => `
                 <div class="question-list-item" data-index="${q.index}" style="flex-shrink: 0; width: 30%; text-align: center; padding: 5px 0; display: flex; justify-content: center; align-items: center;">
                     Q${q.index + 1} 
@@ -409,3 +409,31 @@ function hideQuestionContainer() {
     $("#question-container").hide();
     $("#question-list-container").remove(); // Add this line
 }
+
+// Dark Mode Toggle
+document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+    const body = document.body;
+    const toggle = document.getElementById('dark-mode-toggle');
+    
+    if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        toggle.textContent = '🌙Switch Theme';
+        localStorage.setItem('darkMode', 'disabled');
+    } else {
+        body.classList.add('dark-mode');
+        toggle.textContent = '☀️Switch Theme';
+        localStorage.setItem('darkMode', 'enabled');
+    }
+});
+
+// Check for saved dark mode preference on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const darkModeSetting = localStorage.getItem('darkMode');
+    const body = document.body;
+    const toggle = document.getElementById('dark-mode-toggle');
+    
+    if (darkModeSetting === 'enabled') {
+        body.classList.add('dark-mode');
+        toggle.textContent = '☀️Switch Theme';
+    }
+});
