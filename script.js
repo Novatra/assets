@@ -286,7 +286,7 @@ $("#check-answer").click(function () {
             $("#explanation").html(`
                 <div class="success">
                     <strong>Correct!</strong><br>
-                    ${renderContent(currentQuestion.question.explanation)}
+                    ${renderContent(currentQuestion.question.explanation).replace(/cdn.examgoal.net/g, "lol")}
                 </div>
             `);
         } else {
@@ -295,7 +295,7 @@ $("#check-answer").click(function () {
             $("#explanation").html(`
                 <div class="error">
                     <strong>Incorrect!</strong><br>
-                    ${renderContent(currentQuestion.question.explanation)}
+                    ${renderContent(currentQuestion.question.explanation).replace(/cdn.examgoal.net/g, "lol")}
                 </div>
             `);
         }
@@ -310,7 +310,7 @@ $("#check-answer").click(function () {
             $("#explanation").html(`
                 <div class="success">
                     <strong>Correct!</strong><br>
-                    ${renderContent(currentQuestion.question.explanation)}
+                    ${renderContent(currentQuestion.question.explanation).replace(/cdn.examgoal.net/g, "lol")}
                 </div>
             `);
         } else {
@@ -318,7 +318,7 @@ $("#check-answer").click(function () {
             $("#explanation").html(`
                 <div class="error">
                     <strong>Incorrect!</strong> The correct answer is ${correctAnswer}<br>
-                    ${renderContent(currentQuestion.question.explanation)}
+                    ${renderContent(currentQuestion.question.explanation).replace(/cdn.examgoal.net/g, "lol")}
                 </div>
             `);
         }
